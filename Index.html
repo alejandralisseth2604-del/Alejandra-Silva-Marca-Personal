@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio Web - Alejandra Peña Silva</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#6C5CE7',
+              'purple-hover': '#5B4BC4',
+              yellow: '#FFC000',
+              dark: '#111111',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c5c5c5;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+
+    /* Waving hand animation */
+    .animate-wave {
+      display: inline-block;
+      animation: waveHand 2s infinite;
+      transform-origin: 70% 70%;
+    }
+    @keyframes waveHand {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased font-sans selection:bg-brand-purple selection:text-white relative">
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md transition-all duration-300 border-b border-gray-100" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 py-5 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-brand-purple flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform">
+          A
+        </div>
+        <span class="text-2xl font-black tracking-tight text-gray-900">Alejandra</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden lg:flex items-center space-x-6 text-gray-600 font-medium text-sm">
+        <a href="#home" class="nav-link text-gray-900 hover:text-brand-purple transition-all">Inicio</a>
+        <a href="#about" class="nav-link hover:text-brand-purple transition-all">Sobre mí</a>
+        <a href="#formacion" class="nav-link hover:text-brand-purple transition-all">Formación</a>
+        <a href="#logros" class="nav-link hover:text-brand-purple transition-all">Logros</a>
+        <a href="#voluntariado" class="nav-link hover:text-brand-purple transition-all">Voluntariado</a>
+        <a href="#portafolio" class="nav-link hover:text-brand-purple transition-all">Portafolio</a>
+        <a href="#curriculum" class="nav-link hover:text-brand-purple transition-all">Mi Currículum</a>
+      </nav>
+
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3">
+      <a href="#home" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Inicio</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Sobre mí</a>
+      <a href="#formacion" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Formación</a>
+      <a href="#logros" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Logros</a>
+      <a href="#voluntariado" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Voluntariado</a>
+      <a href="#portafolio" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Portafolio</a>
+      <a href="#curriculum" onclick="toggleMobileMenu()" class="block text-gray-800 hover:text-brand-purple font-medium">Mi Currículum</a>
+    </div>
+  </header>
+
+  <!-- 1. INICIO -->
+  <section id="home" class="max-w-7xl mx-auto px-6 sm:px-8 pt-8 pb-16 lg:pt-16 lg:pb-24 min-h-[calc(100vh-80px)] flex flex-col justify-between">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center my-auto">
+      
+      <!-- Content Left -->
+      <div class="lg:col-span-6 space-y-8 z-10">
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 tracking-tight leading-tight">
+            Alejandra Lisseth Peña Silva 
+          </h1>
+          <p class="text-brand-purple font-bold text-lg sm:text-xl">Estudiante de Bachillerato & Aspirante a Cirujana</p>
+        </div>
+
+        <p class="text-gray-600 text-base sm:text-lg max-w-md leading-relaxed font-normal">
+          ¡Hola! Soy una joven que siempre está buscando aprender algo nuevo. Actualmente estudio segundo año de bachillerato. Desde pequeña he tenido muy claro que quiero estudiar Medicina, y mi mayor sueño es especializarme en Cirugía General. Me apasiona la idea de ayudar a las personas. Además, disfruto de las pequeñas cosas que me hacen feliz, como escuchar música, dibujar, pintar y ver series.
+        </p>
+      </div>
+
+      <!-- Hero Visual Right -->
+      <div class="lg:col-span-6 relative flex justify-center items-center select-none pt-6 lg:pt-0">
+        <div class="relative w-72 sm:w-80 md:w-96 h-[380px] sm:h-[430px] md:h-[480px] bg-brand-yellow rounded-t-full rounded-b-[120px] flex justify-center items-end shadow-inner">
+          
+          <div class="absolute -top-4 -right-4 text-gray-800 opacity-80">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+            </svg>
+          </div>
+
+          <img 
+            src="imagenes/foto-perfil.jpg" 
+            alt="Alejandra Peña" 
+            class="absolute bottom-0 h-[112%] max-w-none object-cover object-top z-10 drop-shadow-2xl rounded-b-[120px] pointer-events-none"
+            onerror="this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800'"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. SOBRE MÍ -->
+  <section id="about" class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-12 space-y-6">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+            Sobre mí
+          </h2>
+          
+          <p class="text-gray-600 leading-relaxed">
+            Mi nombre es Alejandra. Me considero una persona soñadora, responsable y perseverante. Me gusta pasar tiempo con las personas que quiero, escuchar música, ver series, hacer flores de origami y aprender cosas nuevas. A lo largo de mi vida he pasado por momentos difíciles, especialmente cuando tengo muchas responsabilidades y siento que estoy bajo presión. Sin embargo, esas experiencias me han ayudado a ser más fuerte, a conocerme mejor y a seguir adelante aunque las cosas se pongan difíciles.
+          </p>
+
+          <p class="text-gray-600 leading-relaxed">
+            Uno de mis mayores sueños es estudiar Medicina y algún día convertirme en cirujana. Me gusta ayudar a los demás y quiero trabajar mucho para alcanzar mis metas. También me siento orgullosa de los logros que he obtenido en mis estudios y de todo lo que he aprendido durante estos años. Sé que todavía me falta mucho por aprender, pero quiero seguir creciendo como persona, cumplir mis sueños y disfrutar cada etapa de mi vida.
+          </p>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FORMACIÓN ACADÉMICA -->
+  <section id="formacion" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Formación académica</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="bg-gray-50 hover:bg-white p-8 rounded-2xl border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-brand-purple flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Supérate</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Programa Empresarial Supérate Grupo Q</p>
+            <p class="text-brand-purple font-semibold text-sm">2024-2026</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 hover:bg-white p-8 rounded-2xl border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Bachillerato General</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Complejo Educativo Confederación Suiza</p>
+            <p class="text-amber-600 font-semibold text-sm">2025-2026</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 hover:bg-white p-8 rounded-2xl border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="school" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Educación Básica</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Complejo Educativo Confederación Suiza</p>
+            <p class="text-emerald-600 font-semibold text-sm">2016-2024</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 hover:bg-white p-8 rounded-2xl border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="smile" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Kinder y Prepa</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Complejo Educativo Confederación Suiza</p>
+            <p class="text-sky-600 font-semibold text-sm">2014-2015</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LOGROS ACADÉMICOS -->
+  <section id="logros" class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Logros académicos</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+
+        <!-- 1er logro -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all group cursor-pointer" 
+        onclick="openProjectLightbox('Certificado en HTML', 'Educación', 'imagenes/HTML.jpeg', 'Certificado obtenido tras realizar el curso de Introducción a HTML')">
+      <div class="relative overflow-hidden aspect-video bg-gray-100">
+          <img src="imagenes/HTML.jpeg" alt="Certificado HTML" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      <div class="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <span class="bg-white text-gray-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        Ver Certificado <i data-lucide="eye" class="w-4 h-4"></i>
+            </span>
+        </div>
+        </div>
+      <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900">Certificado en HTML</h3>
+        </div>
+      </div>
+
+      <!-- 2do logro -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all group cursor-pointer" 
+           onclick="openProjectLightbox('Certificado en CSS', 'Educación', 'imagenes/CSS.jpeg', 'Certificado obtenido tras realizar el curso de Introducción a CSS')">
+        <div class="relative overflow-hidden aspect-video bg-gray-100">
+          <img src="imagenes/CSS.jpeg" alt="Certificado en CSS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800'">
+        <div class="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="bg-white text-gray-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+              Ver Certificado <i data-lucide="eye" class="w-4 h-4"></i>
+            </span>
+          </div>
+          </div>
+        <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900">Certificado en CSS</h3>
+          </div>
+          </div>
+
+          <!-- 3er logro -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all group cursor-pointer" 
+               onclick="openProjectLightbox('Certificado JavaScript', 'Educación', 'imagenes/JS.jpeg', 'Certificado obtenido tras realizar el curso de Introducción a JavaScript')">
+        <div class="relative overflow-hidden aspect-video bg-gray-100">
+          <img src="imagenes/JS.jpeg" alt="Certificado JavaScript" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800'">
+        <div class="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <span class="bg-white text-gray-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+                  Ver Certificado <i data-lucide="eye" class="w-4 h-4"></i>
+            </span>
+              </div>
+            </div>
+        <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900">Certificado JavaScript</h3>
+            </div>
+            </div>
+
+        <!-- 4to logro -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all group cursor-pointer" 
+             onclick="openProjectLightbox('Certificado de Microsoft Excel', 'Educación', 'imagenes/certificado-de-excel.jpeg', 'Certificación obtenida por demostrar competencias en el uso de herramientas de Excel')">
+        <div class="relative overflow-hidden aspect-video bg-gray-100">
+          <img src="imagenes/certificado-de-excel.jpeg" alt="Certificado Excel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'">
+        <div class="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <span class="bg-white text-gray-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+                Ver Certificado <i data-lucide="eye" class="w-4 h-4"></i>
+            </span>
+              </div>
+            </div>
+        <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900">Certificado de Microsoft Excel</h3>
+            </div>
+          </div>
+
+        <!-- 5to logro -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all group cursor-pointer" 
+             onclick="openProjectLightbox('Diploma de CISCO', 'Educación', 'imagenes/conceto-en-redes.jpeg', 'Reconocimiento otorgado por completar la formación en fundamentos de redes')">
+        <div class="relative overflow-hidden aspect-video bg-gray-100">
+          <img src="imagenes/conceto-en-redes.jpeg" alt="Diploma de CISCO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800'">
+        <div class="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <span class="bg-white text-gray-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+                Ver Certificado <i data-lucide="eye" class="w-4 h-4"></i>
+                </span>
+              </div>
+            </div>
+          <div class="p-6">
+             <h3 class="text-lg font-bold text-gray-900">Diploma de CISCO</h3>
+            </div>
+          </div>
+
+          <!-- 6to logro -->
+          <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all group cursor-pointer" 
+                onclick="openProjectLightbox('Medalla de Expo Tech', 'Educación', 'imagenes/expo-tech.jpeg', 'Medalla obtenida por la participación y presentación de proyectos en la feria tecnológica Expo Tech.')">
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img src="imagenes/expo-tech.jpeg" alt="Medalla de Expo Tech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800'">
+              <div class="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <span class="bg-white text-gray-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+                  Ver Certificado <i data-lucide="eye" class="w-4 h-4"></i>
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Medalla de Expo Tech</h3>
+            </div>
+          </div>
+
+          </div>
+          </div>
+          </section>
+
+  <!-- 5. VOLUNTARIADO -->
+  <section id="voluntariado" class="py-20 bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Voluntariado</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+    <!-- 1er Voluntariado -->
+    <article class="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all flex flex-col justify-between">
+      <div>
+        <img src="imagenes/cuidado-de-niños.jpeg" alt="Cuidado de Niños" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600'">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 hover:text-brand-purple transition-colors cursor-pointer" onclick="openBlogModal('Cuidado de Niños', 'Ayuda orientada al fortalecimiento de la alfabetización infantil como parte de un proyecto social.')">Cuidado de Niños</h3>
+          <p class="text-gray-500 text-sm mt-3">Ayuda con alfabetización como proyecto de horas sociales.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2do Voluntariado -->
+    <article class="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all flex flex-col justify-between">
+      <div>
+        <img src="imagenes/iglesia.jpeg" alt="Participación en la iglesia" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&q=80&w=600'">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 hover:text-brand-purple transition-colors cursor-pointer" onclick="openBlogModal('Participación en la Iglesia', 'Aportes comunitarios activos en el servicio parroquial y apoyo integral en actividades religiosas y sociales.')">Participación en la iglesia</h3>
+          <p class="text-gray-500 text-sm mt-3">Ayuda comunitaria, servicio en misa y otras actividades.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3er Voluntariado -->
+    <article class="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all flex flex-col justify-between">
+      <div>
+        <img src="imagenes/campaña-de-limpieza.jpeg" alt="Proyecto de limpieza" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600'">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 hover:text-brand-purple transition-colors cursor-pointer" onclick="openBlogModal('Proyecto de Limpieza', 'Jornadas de concientización ecológica y mantenimiento para un entorno escolar ordenado y saludable.')">Proyecto de limpieza</h3>
+          <p class="text-gray-500 text-sm mt-3">Campaña de limpieza en la escuela.</p>
+        </div>
+      </div>
+    </article>
+
+    </div>
+
+    </div>
+    </section>
+
+  <!-- 6. PORTAFOLIO -->
+  <section id="portafolio" class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Portafolio</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Proyecto 1 -->
+        <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+          <div class="aspect-video bg-purple-50 flex items-center justify-center relative overflow-hidden">
+            <img src="imagenes/hakaton.png" alt="Proyecto Web" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600'">
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-xl font-bold text-gray-900">One Grade</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Aplicación escolar para gestionar, consultar y descargar calificaciones del sistema público en tiempo real.</p>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+          <div class="aspect-video bg-purple-50 flex items-center justify-center relative overflow-hidden">
+            <img src="imagenes/expo-logro.jpeg" alt="EmerTech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=600'">
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-xl font-bold text-gray-900">Proyecto EmerTech</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Es una plataforma web interactiva diseñada para ofrecer guías paso a paso y protocolos de respuesta rápida ante emergencias.</p>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+          <div class="aspect-video bg-purple-50 flex items-center justify-center relative overflow-hidden">
+            <img src="imagenes/expotech.jpeg" alt="BiteX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600'">
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-xl font-bold text-gray-900">Proyecto BiteX</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Es un sitio web interactivo que conecta a grandes locales para donar la comida que les sobra a quienes más lo necesitan.</p>
+          </div>
+        </div>
+
+        </div>
+
+        </div>
+        </section>
+
+  <!-- 7. MI CURRÍCULUM -->
+  <section id="curriculum" class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Mi Currículum</h2>
+        <p class="text-gray-500 text-sm">Resumen de mi trayectoria académica, competencias técnicas y metas profesionales.</p>
+      </div>
+
+      <div class="bg-gray-50 rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-lg space-y-10">
+        
+        <!-- Header del CV -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-gray-200 pb-8 gap-6">
+          <div>
+            <h3 class="text-3xl font-black text-gray-900">Alejandra Lisseth Peña Silva</h3>
+            <p class="text-brand-purple font-semibold text-lg mt-1">Estudiante de Bachillerato General | Programa Supérate</p>
+          </div>
+          <button onclick="downloadResume()" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-purple text-white font-semibold rounded-xl hover:bg-brand-purple-hover transition-colors w-fit">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            Descargar CV en PDF
+          </button>
+        </div>
+
+        <!-- Secciones del CV -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Columna 1: Perfil y Objetivo -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-brand-purple font-bold">
+              <i data-lucide="target" class="w-5 h-5"></i>
+              <h4 class="text-lg text-gray-900">Objetivo Profesional</h4>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Formarme profesionalmente en la carrera de Medicina con especialización en Cirugía General, combinando la vocación de servicio con habilidades científicas, de programación y resolución de problemas.
+            </p>
+          </div>
+
+          <!-- Columna 2: Habilidades -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-brand-purple font-bold">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+              <h4 class="text-lg text-gray-900">Habilidades Clave</h4>
+            </div>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> HTML5, CSS3, JavaScript</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Microsoft Office (Excel Expert)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Trabajo en equipo y liderazgo</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Adaptabilidad y resolución de problemas</li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Certificaciones -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-brand-purple font-bold">
+              <i data-lucide="award" class="w-5 h-5"></i>
+              <h4 class="text-lg text-gray-900">Certificaciones</h4>
+            </div>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Certificado Microsoft Excel Expert</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> CS First - Ciencias de la Computación</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Fundamentos de Redes</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL GENÉRICO PARA VISTA DETALLADA -->
+  <div id="genericModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal('genericModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <div id="genericModalImage" class="mb-4 hidden rounded-xl overflow-hidden">
+        <img id="genericModalImg" src="" alt="Detalle" class="w-full h-64 object-cover">
+      </div>
+      <h3 id="genericModalTitle" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+      <p id="genericModalContent" class="text-gray-600 text-sm leading-relaxed mb-6"></p>
+      <div class="flex justify-end">
+        <button onclick="closeModal('genericModal')" class="px-5 py-2.5 bg-brand-purple text-white font-semibold rounded-xl hover:bg-brand-purple-hover transition-colors">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Navigation scroll highlight
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+
+    // Mobile Menu toggle
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Modal Control Functions
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close modal when clicking outside backdrop
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('genericModal');
+      if (e.target === modal) {
+        closeModal('genericModal');
+      }
+    });
+
+    function downloadResume() {
+      alert("Iniciando la descarga del CV de Alejandra Peña...");
+    }
+
+    // Portfolio Lightbox Trigger
+    function openProjectLightbox(title, category, imageUrl, description) {
+      const imgContainer = document.getElementById('genericModalImage');
+      const img = document.getElementById('genericModalImg');
+      
+      img.src = imageUrl;
+      imgContainer.classList.remove('hidden');
+      document.getElementById('genericModalTitle').textContent = title;
+      document.getElementById('genericModalContent').textContent = description || `Vista detallada para ${title}.`;
+      
+      openModal('genericModal');
+    }
+
+    // Blog Post Modal Trigger
+    function openBlogModal(title, description) {
+      document.getElementById('genericModalImage').classList.add('hidden');
+      document.getElementById('genericModalTitle').textContent = title;
+      document.getElementById('genericModalContent').textContent = description || `Información detallada acerca de la actividad: ${title}.`;
+      openModal('genericModal');
+    }
+  </script>
+</body>
+</html>
